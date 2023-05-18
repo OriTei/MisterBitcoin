@@ -1,0 +1,40 @@
+.loader-container {
+    margin: 200px;
+}
+
+.coin-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.coin {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    animation-name: coin;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    background-color: lightseagreen;
+}
+.coin-2 {
+    animation-delay: 0.2s;
+}
+.coin-3 {
+    animation-delay: 0.4s;
+}
+@keyframes coin {
+    0% {
+        transform: scale(1);
+        background-color: lightseagreen;
+    }
+    50% {
+        background-color: lightcyan;
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        background-color: lightseagreen;
+    }
+}
