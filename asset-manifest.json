@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/http//OriT579.github.io/MisterBitcoin/static/css/main.ad764069.css",
+    "main.js": "/http//OriT579.github.io/MisterBitcoin/static/js/main.c00c4b15.js",
+    "static/js/787.dfa6a89a.chunk.js": "/http//OriT579.github.io/MisterBitcoin/static/js/787.dfa6a89a.chunk.js",
+    "index.html": "/http//OriT579.github.io/MisterBitcoin/index.html",
+    "main.ad764069.css.map": "/http//OriT579.github.io/MisterBitcoin/static/css/main.ad764069.css.map",
+    "main.c00c4b15.js.map": "/http//OriT579.github.io/MisterBitcoin/static/js/main.c00c4b15.js.map",
+    "787.dfa6a89a.chunk.js.map": "/http//OriT579.github.io/MisterBitcoin/static/js/787.dfa6a89a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad764069.css",
+    "static/js/main.c00c4b15.js"
+  ]
+}
