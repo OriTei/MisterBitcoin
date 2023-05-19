@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Modal from 'react-modal'
 import { setAppElement } from 'react-modal'
 
-export function ContactPreview({ contact, onRemoveContact }) {
+export function ContactPreview({ contact, onRemoveContact, onSelectContact }) {
     setAppElement('#root')
     const [showModal, setShowModal] = useState(false)
 
@@ -21,8 +21,8 @@ export function ContactPreview({ contact, onRemoveContact }) {
 
     return (
         <li key={contact._id}>
-            <section className="contact-preview flex space-between">
-                <div>
+            <section className="contact-preview flex space-between" >
+                <div onClick={() => onSelectContact(contact._id)}>
                     <h2>{contact.name}</h2>
                     <p>{contact.phone}</p>
                     <p>{contact.email}</p>
