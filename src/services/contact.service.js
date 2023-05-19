@@ -1,3 +1,5 @@
+import { storageService } from "./storage.service";
+
 export const contactService = {
     getContacts,
     getContactById,
@@ -140,7 +142,12 @@ function sort(arr) {
 
 function getContacts(filterBy = null) {
     return new Promise((resolve, reject) => {
-        var contactsToReturn = contacts;
+        debugger
+        var contactsToReturn = storageService.load('contactsDB');
+        if (!contactsToReturn || !contactsToReturn.length) {
+            contactsToReturn = contacts
+            storageService.store('contactsDB',contactsToReturn)
+        }
         if (filterBy && filterBy.term) {
             contactsToReturn = filter(filterBy.term)
         }
@@ -157,11 +164,13 @@ function getContactById(id) {
 
 function deleteContact(id) {
     return new Promise((resolve, reject) => {
-        const index = contacts.findIndex(contact => contact._id === id)
+        var currContacts = storageService.load('contactsDB')
+        if(!currContacts) currContacts = contacts
+        const index = currContacts.findIndex(contact => contact._id === id)
         if (index !== -1) {
-            contacts.splice(index, 1)
+            currContacts.splice(index, 1)
         }
-
+        storageService.store('contactsDB',currContacts)
         resolve(contacts)
     })
 }

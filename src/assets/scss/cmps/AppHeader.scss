@@ -2,7 +2,7 @@ header {
     background-color: #333;
     padding: 15px;
     box-shadow: 0px 0px 1px 1px rgb(0, 0, 0);
-    
+    font-size: 1.2em;
     .header-container {
         display: flex;
         flex-direction: row-reverse;
@@ -34,9 +34,6 @@ header {
             box-shadow: 3px 1px 1px white;
             width: 30px;
             border-radius: 50%;
-            &:hover {
-                box-shadow: 3px 1px 1px lightseagreen;
-            }
         }
         img,
         h1 {

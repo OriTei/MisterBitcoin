@@ -10,7 +10,6 @@ export const bitcoinService = {
 
 async function getRate(coins) {
     try {
-
         const rate = await axios(`https://blockchain.info/tobtc?currency=USD&value=${coins}`)
         storageService.store('bitcoinRateDB', rate.data)
         return rate.data

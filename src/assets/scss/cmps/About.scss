@@ -2,12 +2,13 @@
     padding: 40px 20px;
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 20px;
     gap: 25px;
     width: 100%;
     box-shadow: 0px 1px 3px 1px black;
     display: flex;
     flex-direction: column;
-    max-width: 75vw;
+    max-width: 70vw;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -31,4 +32,59 @@
             transform: translateY(0);
         }
     }
+}
+@media (max-width: 768px) {
+    .about-container {
+        max-width: 90vw;
+    }
+}
+
+.coin-container {
+    display: flex;
+    gap: 50px;
+    margin:50px 0px;
+    .spinning-coin {
+        margin: 0px 20px;
+        width: 280px;
+        height: 280px;
+        background-color: orange;
+        border-radius: 50%;
+        box-shadow: 5px 5px 5px black;
+        animation: spin 3s infinite linear;
+        transform-style: preserve-3d;
+        transform-origin: center;
+        text-align: center;
+        font-size: 5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 2px black;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotateY(0deg);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+}
+
+.money-container {
+    padding: 20px;
+    background-color: rgb(108, 110, 111);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.money-bag {
+    width: 100px;
+    height: 120px;
+    animation: float 3s infinite ease-in-out;
+    overflow: hidden;
+    border-radius: 5px;
 }

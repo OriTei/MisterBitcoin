@@ -6,12 +6,13 @@
 .contact-list {
     padding: 20px;
     display: grid;
-    gap: 10px;
+    gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     animation: fadein 0.5s ease-in-out;
 }
 
 .contact-list li {
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -20,6 +21,27 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 20px;
+    &:hover {
+        background-color: #333;
+        cursor: pointer;
+        scale: 1.01;
+    }
+    button {
+        right: 0;
+        top: 0;
+        font-weight: 600;
+        position: absolute;
+        box-shadow: 0px 0px 0px 2px black;
+        border: none;
+        font-size: 20px;
+        border-radius: 50%;
+        padding: 0px 10px;
+        margin: 5px;
+        &:hover {
+            background-color: lightcoral;
+            color: white;
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -29,11 +51,16 @@
         align-items: center;
         padding: 20px 0px;
         gap: 10px;
-        li{
+        li {
             display: flex;
             width: 95vw;
             font-size: 1em;
         }
-        
     }
+}
+
+.no-contacts-header{
+    margin: 250px 0px;
+    font-size: 3em;
+    text-align: center;
 }
