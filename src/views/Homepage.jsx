@@ -30,6 +30,7 @@ export default class Homepage extends Component {
         return (
             <section className="homepage-details">
                 <div className="top-info">
+                    <h2><a href='https://www.coindesk.com/price/bitcoin/' target='blank'>Last Week's news</a></h2>
                     <section className="user-details">
                         <h1 className="flex justify-content space-between">
                             {user.name}

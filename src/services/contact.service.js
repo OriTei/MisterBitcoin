@@ -142,7 +142,6 @@ function sort(arr) {
 
 function getContacts(filterBy = null) {
     return new Promise((resolve, reject) => {
-        debugger
         var contactsToReturn = storageService.load('contactsDB');
         if (!contactsToReturn || !contactsToReturn.length) {
             contactsToReturn = contacts
