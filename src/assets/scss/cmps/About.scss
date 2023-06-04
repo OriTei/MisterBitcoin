@@ -5,7 +5,6 @@
     margin-bottom: 20px;
     gap: 25px;
     width: 100%;
-    box-shadow: 0px 1px 3px 1px black;
     display: flex;
     flex-direction: column;
     max-width: 70vw;
@@ -20,7 +19,7 @@
     }
     p {
         font-size: 1.5em;
-        text-align: left;
+        text-align:justify;
     }
 
     @keyframes fadeIn {
@@ -38,13 +37,15 @@
     .about-container {
         max-width: 90vw;
     }
-    
 }
 
 .coin-container {
     display: flex;
     gap: 50px;
-    margin:50px 0px;
+    margin: 50px 0px;
+    .coin-2 {
+        background-color: lightseagreen;
+    }
     .spinning-coin {
         margin: 0px 20px;
         width: 280px;
@@ -61,13 +62,14 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 20px;
-        text-shadow: 2px 2px 2px black;
+        text-shadow: 2px 2px 2px rgb(0, 0, 0);
     }
 
     @keyframes spin {
         0% {
             transform: rotateY(0deg);
         }
+
         100% {
             transform: rotateY(360deg);
         }

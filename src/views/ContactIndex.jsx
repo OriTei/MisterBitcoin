@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { contactService } from '../services/contact.service'
 import ContactList from '../cmps/ContactList'
 import { ContactDetails } from './ContactDetailsPage'
+import { ContactFilter } from '../cmps/ContactFilter'
+import { log } from 'util'
 
 export default class ContactIndex extends Component {
     state = {
@@ -31,19 +33,30 @@ export default class ContactIndex extends Component {
     }
 
     loadContacts = async () => {
+        const newFilterBy = this.state.filterBy
+        console.log(newFilterBy)
         try {
-            const contacts = await contactService.getContacts(this.filterBy)
+            const contacts = await contactService.getContacts(newFilterBy)
             this.setState({ contacts })
         } catch (err) {
             console.error('err:', err)
         }
     }
+
+    onChangeFilter = (filterBy) => {
+        this.setState({ filterBy: { ...filterBy } }, this.loadContacts)
+    }
+
     render() {
-        const { contacts, selectedContactId } = this.state
+        const { contacts, selectedContactId, filterBy } = this.state
         return (
             <section className="contact-index">
+                <ContactFilter
+                    filterBy={filterBy}
+                    onChangeFilter={this.onChangeFilter}
+                />
                 {selectedContactId ? (
-                    <ContactDetails contactId={selectedContactId}/>
+                    <ContactDetails contactId={selectedContactId} />
                 ) : (
                     <ContactList
                         contacts={contacts}

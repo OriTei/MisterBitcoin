@@ -34,7 +34,7 @@ export function ContactPreview({ contact, onRemoveContact, onSelectContact }) {
                     />
                 </div>
                 <button className="remove-btn" onClick={openModal}>
-                    x
+                    <p>x</p>
                 </button>
             </section>
 

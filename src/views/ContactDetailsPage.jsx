@@ -27,21 +27,20 @@ export class ContactDetails extends Component {
 
     render() {
         const { contact, isLoading } = this.state
-        if (isLoading) return <Loader />
+
+        if (isLoading) {
+            return <Loader />
+        }
 
         return (
             <section className="contact-details">
-                {contact && (
+                {contact ? (
                     <>
-                        {!isLoading && (
-                            <img
-                                src={`https://robohash.org/${contact._id}?set=set5&size=200x200`}
-                                alt="Contact Profile"
-                                onLoad={() =>
-                                    this.setState({ isLoading: false })
-                                }
-                            />
-                        )}
+                        <img
+                            onLoad={() => this.setState({ isLoading: false })}
+                            src={`https://robohash.org/${contact._id}?set=set5&size=220x200`}
+                            alt="Contact Profile"
+                        />
                         <div className="contact-cred">
                             <h1>{contact.name}</h1>
                             <p>
@@ -52,6 +51,8 @@ export class ContactDetails extends Component {
                             </p>
                         </div>
                     </>
+                ) : (
+                    <p>Contact not found.</p>
                 )}
             </section>
         )

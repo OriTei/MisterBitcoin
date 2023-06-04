@@ -1,5 +1,4 @@
 import { storageService } from "./storage.service";
-
 export const contactService = {
     getContacts,
     getContactById,
@@ -144,15 +143,26 @@ function getContacts(filterBy = null) {
     return new Promise((resolve, reject) => {
         var contactsToReturn = storageService.load('contactsDB');
         if (!contactsToReturn || !contactsToReturn.length) {
-            contactsToReturn = contacts
-            storageService.store('contactsDB',contactsToReturn)
+            contactsToReturn = contacts;
+            storageService.store('contactsDB', contactsToReturn);
         }
-        if (filterBy && filterBy.term) {
-            contactsToReturn = filter(filterBy.term)
+        if (filterBy) {
+            contactsToReturn = contactsToReturn.filter((contact) => {
+                const { name, phone, email } = filterBy;
+                const contactName = contact.name.toLowerCase();
+                const contactPhone = contact.phone.toLowerCase();
+                const contactEmail = contact.email.toLowerCase();
+                return (
+                    contactName.includes(name.toLowerCase()) &&
+                    contactPhone.includes(phone.toLowerCase()) &&
+                    contactEmail.includes(email.toLowerCase())
+                );
+            });
         }
-        resolve(sort(contactsToReturn))
-    })
+        resolve(sort(contactsToReturn));
+    });
 }
+
 
 function getContactById(id) {
     return new Promise((resolve, reject) => {
@@ -164,12 +174,12 @@ function getContactById(id) {
 function deleteContact(id) {
     return new Promise((resolve, reject) => {
         var currContacts = storageService.load('contactsDB')
-        if(!currContacts) currContacts = contacts
+        if (!currContacts) currContacts = contacts
         const index = currContacts.findIndex(contact => contact._id === id)
         if (index !== -1) {
             currContacts.splice(index, 1)
         }
-        storageService.store('contactsDB',currContacts)
+        storageService.store('contactsDB', currContacts)
         resolve(contacts)
     })
 }
@@ -222,3 +232,4 @@ function _makeId(length = 10) {
     }
     return txt
 }
+

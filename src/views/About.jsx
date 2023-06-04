@@ -14,9 +14,9 @@ export default function About() {
                     management. Embrace the future of finance at your
                     fingertips. Get MisterBitcoin now!
                 </p>
-            </section>
-            <section className="coin-container">
-                <div className="spinning-coin">₿</div>
+                <section className="coin-container">
+                    <div className="spinning-coin coin-1 ">₿</div>
+                </section>
             </section>
         </>
     )

@@ -11,7 +11,7 @@ function App() {
                 <header>
                     <AppHeader />
                 </header>
-                <main className="home-container">
+            <main className="home-container">
                     <Switch>
                         {/* <Route path="/contacts/:id" component={ContactDetailsPage} /> */}
                         <Route path="/contacts" component={ContactIndex} />
