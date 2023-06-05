@@ -14,7 +14,7 @@ header {
             a {
                 text-decoration: none;
                 &:hover {
-                    color: lightseagreen;
+                    color: orange;
                 }
             }
         }
@@ -33,13 +33,16 @@ header {
             box-shadow: 3px 1px 1px white;
             width: 30px;
             border-radius: 50%;
+            &:hover {
+                box-shadow: 3px 1px 1px rgb(245, 190, 95);
+            }
         }
         img,
         h1 {
             &:hover {
                 cursor: pointer;
                 scale: 1.05;
-                color: lightseagreen;
+                color: orange;
             }
         }
         a {
@@ -77,12 +80,11 @@ header {
     display: none;
     cursor: pointer;
 }
-.hamburger-menu{
-    &:hover{
+.hamburger-menu {
+    &:hover {
         cursor: pointer;
-        .bar{
+        .bar {
             background-color: orange;
-            transition:  background-color 0.3s ease-in-out;
         }
     }
 }
@@ -113,8 +115,9 @@ header {
             background-color: rgb(42, 42, 42);
             padding: 10px;
             box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
-            &:hover{
-                background-color: #333
+            &:hover {
+                background-color: #333;
+                color: orange;
             }
         }
         text-align: center;
