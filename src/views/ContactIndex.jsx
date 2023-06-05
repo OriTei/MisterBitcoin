@@ -3,13 +3,16 @@ import { contactService } from '../services/contact.service'
 import ContactList from '../cmps/ContactList'
 import { ContactDetails } from './ContactDetailsPage'
 import { ContactFilter } from '../cmps/ContactFilter'
-import { log } from 'util'
 
 export default class ContactIndex extends Component {
     state = {
         contacts: null,
         selectedContactId: null,
-        filterBy: { name: '', phone: '', email: '' }
+        filterBy: {
+            name: '',
+            phone: '',
+            email: ''
+        }
     }
     componentDidMount() {
         this.loadContacts()

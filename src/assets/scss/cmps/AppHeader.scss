@@ -15,7 +15,6 @@ header {
                 text-decoration: none;
                 &:hover {
                     color: lightseagreen;
-                    scale: 1.1;
                 }
             }
         }
@@ -78,6 +77,15 @@ header {
     display: none;
     cursor: pointer;
 }
+.hamburger-menu{
+    &:hover{
+        cursor: pointer;
+        .bar{
+            background-color: orange;
+            transition:  background-color 0.3s ease-in-out;
+        }
+    }
+}
 
 .bar {
     width: 35px;
@@ -98,17 +106,28 @@ header {
         display: flex;
         flex-direction: column;
         height: 100vh;
+        box-shadow: 0px 2px 2px 2px black;
         padding-top: 17px;
         z-index: 10;
         a {
             background-color: rgb(42, 42, 42);
             padding: 10px;
             box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
+            &:hover{
+                background-color: #333
+            }
         }
         text-align: center;
         transition: left 0.5s ease-in-out; /* Update transition property */
     }
     .side-menu.open {
         left: 0;
+    }
+    .home-container {
+        transition: filter 0.5s ease-in-out;
+    }
+    .home-container.blur {
+        filter: brightness(40%);
+        pointer-events: none;
     }
 }
