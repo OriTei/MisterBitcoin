@@ -32,7 +32,7 @@ function App() {
                     </Switch>
                 </main>
                 <footer>
-                    <AppFooter />
+                    {/* <AppFooter /> */}
                 </footer>
             </section>
         </Router>
