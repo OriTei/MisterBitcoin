@@ -5,7 +5,7 @@ import Homepage from './views/Homepage';
 import About from './views/About';
 import AppHeader from './cmps/AppHeader';
 import ContactIndex from './views/ContactIndex';
-import AppFooter from './cmps/AppFooter';
+import { ContactDetails } from './views/ContactDetailsPage';
 
 function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -26,14 +26,13 @@ function App() {
                 </header>
                 <main className={isMenuOpen ? 'home-container' : 'home-container blur'}>
                     <Switch>
+                        <Route path="/contacts/:id" component={ContactDetails} />
                         <Route path="/contacts" component={ContactIndex} />
                         <Route path="/about" component={About} />
                         <Route path="/" component={Homepage} />
                     </Switch>
                 </main>
-                <footer>
-                    {/* <AppFooter /> */}
-                </footer>
+                {/* <AppFooter /> */}
             </section>
         </Router>
     );

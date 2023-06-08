@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
-import { setAppElement } from 'react-modal'
+import { Link } from 'react-router-dom'
+
+// Set the app element for the modal
+Modal.setAppElement('#root')
 
 export function ContactPreview({ contact, onRemoveContact, onSelectContact }) {
-    setAppElement('#root')
     const [showModal, setShowModal] = useState(false)
 
-    const openModal = () => {
+    const openModal = (event) => {
+        event.preventDefault()
         setShowModal(true)
     }
 
@@ -21,8 +24,11 @@ export function ContactPreview({ contact, onRemoveContact, onSelectContact }) {
 
     return (
         <li key={contact._id}>
-            <section className="contact-preview flex space-between" >
-                <div onClick={() => onSelectContact(contact._id)}>
+            <Link
+                to={`/contacts/${contact._id}`}
+                className="contact-preview flex space-between"
+            >
+                <div className="contact-cred">
                     <h2>{contact.name}</h2>
                     <p>{contact.phone}</p>
                     <p>{contact.email}</p>
@@ -36,7 +42,7 @@ export function ContactPreview({ contact, onRemoveContact, onSelectContact }) {
                 <button className="remove-btn" onClick={openModal}>
                     <p>x</p>
                 </button>
-            </section>
+            </Link>
 
             <Modal
                 isOpen={showModal}
