@@ -15,7 +15,6 @@ export class ContactDetails extends Component {
 
     onRemoveContact = async (contactId) => {
         try {
-
         } catch (err) {
             console.error('err:', err)
         }
@@ -68,7 +67,9 @@ export class ContactDetails extends Component {
                                 <button onClick={this.onRemoveContact}>
                                     Delete
                                 </button>
-                                <button>Edit</button>
+                                <Link to={`/contacts/edit/${contact._id}`}>
+                                    Edit
+                                </Link>
                             </div>
                             <Link to="/contacts" className="back-link">
                                 Back to contacts

@@ -1,0 +1,47 @@
+.contact-edit-container {
+    h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        input {
+            font-size: 1.5em;
+            width: 400px;
+            padding: 5px 10px;
+        }
+        button {
+            font-size: 1.5em;
+            width: 100px;
+            border: none;
+            transition: scale 0.1s ease-in-out;
+            margin-top: 10px;
+            border-radius: 10px;
+            &:hover {
+                scale: 1.05;
+            }
+        }
+        .edit-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-edit-container {
+        form {
+            input {
+                width: 95vw;
+            }
+        }
+    }
+}

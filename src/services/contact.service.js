@@ -165,8 +165,9 @@ function getContacts(filterBy = null) {
 
 
 function getContactById(id) {
+    const contactsToReturn = storageService.load('contactsDB')
     return new Promise((resolve, reject) => {
-        const contact = contacts.find(contact => contact._id === id)
+        const contact = contactsToReturn.find(contact => contact._id === id)
         contact ? resolve(contact) : reject(`Contact id ${id} not found!`)
     })
 }
@@ -185,10 +186,12 @@ function deleteContact(id) {
 }
 
 function _updateContact(contact) {
+    const currContacts = storageService.load('contactsDB')
     return new Promise((resolve, reject) => {
-        const index = contacts.findIndex(c => contact._id === c._id)
+        const index = currContacts.findIndex(c => contact._id === c._id)
         if (index !== -1) {
-            contacts[index] = contact
+            currContacts[index] = contact
+            storageService.store('contactsDB', currContacts)
         }
         resolve(contact)
     })
@@ -197,7 +200,9 @@ function _updateContact(contact) {
 function _addContact(contact) {
     return new Promise((resolve, reject) => {
         contact._id = _makeId()
-        contacts.push(contact)
+        let contactsToReturn = storageService.load('contactsDB')
+        contactsToReturn.push(contact)
+        storageService.store('contactsDB', contactsToReturn)
         resolve(contact)
     })
 }

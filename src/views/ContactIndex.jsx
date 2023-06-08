@@ -3,6 +3,7 @@ import { contactService } from '../services/contact.service'
 import ContactList from '../cmps/ContactList'
 import { ContactDetails } from './ContactDetailsPage'
 import { ContactFilter } from '../cmps/ContactFilter'
+import { Link } from 'react-router-dom'
 export default class ContactIndex extends Component {
     state = {
         contacts: null,
@@ -10,7 +11,8 @@ export default class ContactIndex extends Component {
             name: '',
             phone: '',
             email: ''
-        }
+        },
+        selectedContacts: []
     }
     componentDidMount() {
         this.loadContacts()
@@ -52,6 +54,9 @@ export default class ContactIndex extends Component {
                     filterBy={filterBy}
                     onChangeFilter={this.onChangeFilter}
                 />
+                <Link to={'/contacts/edit'} className="add-contact-link">
+                    Add contact
+                </Link>
                 <ContactList
                     contacts={contacts}
                     onRemoveContact={this.onRemoveContact}

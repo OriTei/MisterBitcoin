@@ -6,6 +6,7 @@ import About from './views/About';
 import AppHeader from './cmps/AppHeader';
 import ContactIndex from './views/ContactIndex';
 import { ContactDetails } from './views/ContactDetailsPage';
+import ContactEditPage from './views/ContactEditPage'
 
 function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -26,13 +27,13 @@ function App() {
                 </header>
                 <main className={isMenuOpen ? 'home-container' : 'home-container blur'}>
                     <Switch>
+                        <Route path="/contacts/edit/:id?" component={ContactEditPage} />
                         <Route path="/contacts/:id" component={ContactDetails} />
                         <Route path="/contacts" component={ContactIndex} />
                         <Route path="/about" component={About} />
                         <Route path="/" component={Homepage} />
                     </Switch>
                 </main>
-                {/* <AppFooter /> */}
             </section>
         </Router>
     );
