@@ -6,7 +6,7 @@
 .contact-list {
     padding: 20px;
     display: grid;
-    gap: 20px;
+    gap: 13px;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     animation: fadein 0.5s ease-in-out;
     margin-bottom: 10vh;
@@ -115,18 +115,27 @@
 }
 @media (max-width: 768px) {
     .contact-list {
+        margin: 0px;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 20px 0px;
-        gap: 10px;
+        gap: 1px;
         li {
+            border-radius: 0px;
             display: flex;
-            width: 92vw;
+            width: 100vw;
             font-size: 1em;
+            &:hover {
+                scale: none;
+                filter: brightness(95%);
+            }
+            button {
+                border-radius: 0px 0px 0px 10px;
+            }
         }
     }
     .custom-modal {
-        width: 90vw;
+        width: 95vw;
     }
 }

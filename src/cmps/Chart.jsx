@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Line } from 'react-chartjs-2'
-import { bitcoinService } from '../services/bitcoin.service'
 import Loader from './Loader'
 import Chart from 'chart.js/auto' // this line is necessary
 

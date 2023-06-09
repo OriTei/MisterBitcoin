@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { contactService } from '../services/contact.service'
 import ContactList from '../cmps/ContactList'
-import { ContactDetails } from './ContactDetailsPage'
 import { ContactFilter } from '../cmps/ContactFilter'
 import { Link } from 'react-router-dom'
 export default class ContactIndex extends Component {
@@ -55,7 +54,7 @@ export default class ContactIndex extends Component {
                     onChangeFilter={this.onChangeFilter}
                 />
                 <Link to={'/contacts/edit'} className="add-contact-link">
-                    Add contact
+                    +
                 </Link>
                 <ContactList
                     contacts={contacts}

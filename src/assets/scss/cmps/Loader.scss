@@ -1,17 +1,18 @@
 .loader-container {
-    margin: 200px;
+    width: 100%;
+    margin-top: 200px;
 }
 
 .coin-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .coin {
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     animation-name: coin;
     animation-duration: 1.5s;

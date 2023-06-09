@@ -8,7 +8,7 @@ export default class Homepage extends Component {
     state = {
         user: null,
         coinsRate: null,
-        isLoading: false
+        isLoading: false,
     }
 
     async componentDidMount() {
