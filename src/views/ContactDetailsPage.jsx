@@ -70,14 +70,8 @@ export class ContactDetails extends Component {
                             />
                             <div className="contact-cred">
                                 <h1>{contact.name}</h1>
-                                <p>
-                                    <span>Phone:</span>{' '}
-                                    <span>{contact.phone}</span>
-                                </p>
-                                <p>
-                                    <span>Email:</span>{' '}
-                                    <span>{contact.email}</span>
-                                </p>
+                                <p>{contact.phone}</p>
+                                <p>{contact.email}</p>
                             </div>
                             <div className="contact-btns">
                                 <button onClick={this.openModal}>Delete</button>
