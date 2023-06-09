@@ -1,3 +1,4 @@
+import { debug } from "util";
 import { storageService } from "./storage.service";
 export const contactService = {
     getContacts,
@@ -175,13 +176,14 @@ function getContactById(id) {
 function deleteContact(id) {
     return new Promise((resolve, reject) => {
         var currContacts = storageService.load('contactsDB')
+        debugger
         if (!currContacts) currContacts = contacts
         const index = currContacts.findIndex(contact => contact._id === id)
         if (index !== -1) {
             currContacts.splice(index, 1)
         }
         storageService.store('contactsDB', currContacts)
-        resolve(contacts)
+        resolve(currContacts)
     })
 }
 

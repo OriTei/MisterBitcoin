@@ -28,6 +28,10 @@
                 scale: 1.05;
             }
         }
+        button:nth-child(1) {
+            background-color: rgb(91, 175, 244);
+            color: white;
+        }
         .edit-btns {
             display: flex;
             gap: 20px;

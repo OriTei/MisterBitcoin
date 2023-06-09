@@ -3,8 +3,9 @@ import { contactService } from '../services/contact.service'
 export default class ContactEditPage extends Component {
     state = {
         contact: contactService.getEmptyContact(),
-        isEdit: false
+        isEdit: false,
     }
+
     handleChange = ({ target }) => {
         const field = target.name
         let value = target.value
@@ -17,7 +18,7 @@ export default class ContactEditPage extends Component {
         const contactId = this.props.match.params.id
         if (contactId) {
             const contact = await contactService.getContactById(contactId)
-            this.setState({ contact })
+            this.setState({ contact, isEdit: true })
         }
     }
 
@@ -36,7 +37,7 @@ export default class ContactEditPage extends Component {
     }
 
     render() {
-        const { isEdit } = this.props
+        const { isEdit } = this.state
         const { name, phone, email } = this.state.contact
         return (
             <section className="contact-edit-container">
