@@ -18,8 +18,8 @@
         text-decoration: underline;
     }
     p {
-        font-size: 1.5em;
-        text-align:justify;
+        font-size: 1.7em;
+        text-align: start;
     }
 
     @keyframes fadeIn {
@@ -91,4 +91,19 @@
     animation: float 3s infinite ease-in-out;
     overflow: hidden;
     border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        h1 {
+            min-width: 100vw;
+            font-size: 30px;
+        }
+        p {
+            overflow: auto;
+            font-size: 1.5em;
+            text-align: left;
+            min-width: 95vw;
+        }
+    }
 }

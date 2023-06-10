@@ -10,11 +10,21 @@ header {
         align-items: center;
         nav {
             display: flex;
+            align-items: center;
             gap: 15px;
             a {
                 text-decoration: none;
                 &:hover {
                     color: orange;
+                }
+            }
+            .login-link {
+                background-color: orange;
+                border-radius: 10px;
+                padding: 5px 10px;
+                &:hover{
+                    background-color: rgb(243, 184, 74);
+                    color: white;
                 }
             }
         }
@@ -24,7 +34,6 @@ header {
         font-weight: 600;
         text-shadow: 2px 2px 2px rgb(0, 0, 0);
     }
-
     .logo-container {
         display: flex;
         align-items: center;
@@ -112,6 +121,7 @@ header {
         padding-top: 17px;
         z-index: 10;
         a {
+            width: 100%;
             background-color: rgb(42, 42, 42);
             padding: 10px;
             box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);

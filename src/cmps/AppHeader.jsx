@@ -20,8 +20,6 @@ export default class AppHeader extends Component {
         this.setState({ isMobile: window.innerWidth < 768 })
     }
 
-    
-
     toggleMenu = () => {
         this.setState((prevState) => ({
             isMenuShown: !prevState.isMenuShown
@@ -53,6 +51,7 @@ export default class AppHeader extends Component {
                                     isMenuShown ? 'side-menu open' : 'side-menu'
                                 }
                             >
+                                <Link to={'/login'}>Login</Link>
                                 <Link to={'/'}>Home</Link>
                                 <Link to={'/about'}>About</Link>
                                 <Link to={'/contacts'}>Contacts</Link>
@@ -64,6 +63,9 @@ export default class AppHeader extends Component {
                             <Link to={'/'}>Home</Link>
                             <Link to={'/about'}>About</Link>
                             <Link to={'/contacts'}>Contacts</Link>
+                            <Link to={'/login'} className="login-link">
+                                Login
+                            </Link>
                         </>
                     )}
                 </nav>
@@ -74,7 +76,6 @@ export default class AppHeader extends Component {
                     </Link>
                 </div>
 
-                {/* Your main content goes here */}
             </section>
         )
     }

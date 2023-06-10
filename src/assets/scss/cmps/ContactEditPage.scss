@@ -9,13 +9,24 @@
     align-items: center;
     height: 50vh;
     form {
+        label {
+            font-size: 1.5em;
+        }
+        h1 {
+            text-align: center;
+        }
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 20px;
         input {
+            border: none;
             font-size: 1.5em;
             width: 400px;
             padding: 5px 10px;
+            &:focus {
+                outline: none;
+                outline: 2px solid $loginColor;
+            }
         }
         button {
             font-size: 1.5em;
@@ -44,7 +55,7 @@
     .contact-edit-container {
         form {
             input {
-                width: 95vw;
+                width: 100%;
             }
         }
     }
