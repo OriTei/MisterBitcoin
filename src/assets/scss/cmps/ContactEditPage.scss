@@ -7,7 +7,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
+    height: 60vh;
     form {
         label {
             font-size: 1.5em;
@@ -53,6 +53,7 @@
 
 @media (max-width: 768px) {
     .contact-edit-container {
+        height: 35vh;
         form {
             input {
                 width: 100%;
