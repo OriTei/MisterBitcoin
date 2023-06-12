@@ -48,12 +48,13 @@
             gap: 20px;
             justify-content: center;
         }
+        
     }
 }
 
 @media (max-width: 768px) {
     .contact-edit-container {
-        height: 35vh;
+        height: 55vh;
         form {
             input {
                 width: 100%;
